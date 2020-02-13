@@ -5,7 +5,7 @@ The user has access to two sliders:
 - The (internally regulated) quadrature component of the stator current
 - The (externally enforced) actual rotor speed.
 
-[![Full range operation preview][1]]
+![Full range operation preview][1]
 
 
 [1]: Complete_movement.gif
