@@ -5,6 +5,9 @@ The user has access to two sliders:
 - The (internally regulated) quadrature component of the stator current
 - The (externally enforced) actual rotor speed.
 
+The output vector diagram and operational quadrant diagram only represent steady state operation in the base speed range.
+
+Preview:
 ![Full range operation preview][1]
 
 
