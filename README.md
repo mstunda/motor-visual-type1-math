@@ -7,10 +7,10 @@ The user has access to two sliders:
 
 The output vector diagram and operational quadrant diagram only represent steady state operation in the base speed range.
 
-Preview:
+## Preview:
 ![Full range operation preview][1]
 
 
-[1]: Complete_movement.gif
+[1]: images/Complete_movement.gif
 
 
