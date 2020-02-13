@@ -1,7 +1,3 @@
----
-Title: Paper
----
-
 # About
 The interface is built using Python 3.7 and the TkInter library. 
 
