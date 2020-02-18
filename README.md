@@ -58,5 +58,7 @@ If not yet installed, the following Python packages will be required:
 
 [link.ieee]:https://ieeexplore.ieee.org/document/8982320
 [gif.complete]:images/Complete_movement.gif
-
+[link.conda]: https://docs.conda.io/en/latest/miniconda.html
+[link.spyder]: https://www.spyder-ide.org/
+[link.prompt]: https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf
 
