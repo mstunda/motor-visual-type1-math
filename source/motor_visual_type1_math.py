@@ -1,16 +1,35 @@
+
+##############################
+###     Program structure:
+##############################
+#
+# - Setup GUI (Canvas and Sliders)
+# - Setup center point coordinates and scale for diagrams
+# - Define mainloop
+# - Vector diagram object
+# - Function to calculate the vector values from user inputs
+# - Function to place the calculated vector values at the correct origin coordinates
+# - Run mainloop
+#  
+
+
+
+
+###################################
+### Setup GUI (Canvas and Sliders)
+###################################
+
 # Setup TkInter
 from tkinter import *
 import tkinter as tk
-from math import sin, cos
 root = tk.Tk()
 
-#import time
-#root = Tk()
 
 # Setup TkInter Canvas
 diagram = Canvas(root, width = 900, height = 500)
 diagram.pack()
-    #quadrature current i_st input slider
+
+# Quadrature current i_st input slider
 slider_current = Scale(
     root, 
     from_=-100, 
@@ -23,29 +42,51 @@ slider_current = Scale(
     label="i_sT [%]")
 slider_current.set(45)
 slider_current.pack()
-    #rotor speed input slider
+
+# Rotor speed input slider
 slider_speed = Scale(root, from_=-100, to=100, length=700,tickinterval=20, orient=HORIZONTAL, fg="purple", font="Times 12 bold", label="ω_r [%]")
 slider_speed.set(45)
 slider_speed.pack()
 
 
-# Setup vector locations
+# Setup general scale
 scale = 100 
+
+
+###########################################################
+### Setup center point coordinates and scale for diagrams
+###########################################################
+
 ori_main = (0, 0, 200, 275)   #current, linkage and voltage center vector
 ori_T = (0, 0, 600, 275)   #torque and speed center vector
-ori_w = (0, 0, 850, 275)   #torque and speed center vector
+ori_w = (0, 0, 850, 275)   #slip frequency vector base 
 
+
+########################################################
+### 
+###     Define mainloop
+###
+########################################################
 
 def main():
     vector_diagram = VectorDiag(diagram)        
     vector_diagram.slide()
     root.mainloop()
 
+
+########################################################
+###    Vector diagram object
+########################################################
+
+# N O T E:
+# This is no doubt an awkward way of implementing the screen cycling.
+# The approach has been greatly improved in the next project:
+# Take a look at >>> "motor_visual_type2_exel"
+
 class VectorDiag:
-    
-    
+        
     def __init__(self, diagram):
-       self.diagram = diagram
+        self.diagram = diagram
                 
     def slide(self):    
         #input
@@ -136,6 +177,13 @@ class VectorDiag:
     
         self.diagram.after(10, self.slide)
 
+
+#################################################################
+### Function to calculate the vector values from user inputs
+#################################################################
+
+# this is the practical implementation of the simplified equivalent circuit equations
+
 def ModelCalc(i_st, w_r, scale_u, scale_i, scale_w, scale_f, scale_T):
 #coefficients / parameters:
     k1 = 1
@@ -194,6 +242,11 @@ def ModelCalc(i_st, w_r, scale_u, scale_i, scale_w, scale_f, scale_T):
     return(i_r, i_s, f_r, f_s, f_m, u_s, u_sr, u_si, w_r, w_s, w_sl, T_e)
     #      0    1    2    3    4    5    6     7     8     9    10   11
 
+
+####################################################################################
+### Function to place the calculated vector values at the correct origin coordinates
+####################################################################################
+
 def VecBuild(model, vector, origin):
     base_x = origin[2]
     base_y = origin[3]
@@ -215,7 +268,12 @@ def VecBuild(model, vector, origin):
     tip_y = base_y - variable[1]
  
     return(base_x, base_y, tip_x, tip_y)
-        
+
+
+####################################
+### Run mainloop
+####################################
+
 main()
 
         

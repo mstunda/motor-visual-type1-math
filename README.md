@@ -39,6 +39,7 @@ The slip frequency is displayed as a vector on the right side to simbolyze the d
 
 ## Running the code
 The graphical interface is built using _Python 3.7_ and the _TkInter_ library.
+The approach taken to continously refresh and draw the _TkInter_ canvas is fairly awkward in this project. A slightly more reasonable approach was adopted in the [__second part__][link.type2] of this project.
 
 ### Python setup
 For a quick and easy isolated _Python 3.x_ setup the [_Miniconda_][link.conda] installer (not full _Anaconda_) and the [_Spyder_][link.spyder] IDE can be recommended. 
@@ -58,6 +59,7 @@ If not yet installed, the following Python packages will be required:
 
 [link.ieee]:https://ieeexplore.ieee.org/document/8982320
 [gif.complete]:images/Complete_movement.gif
+[link.type2]:https://github.com/mstunda/motor-visual-type2-excel
 [link.conda]: https://docs.conda.io/en/latest/miniconda.html
 [link.spyder]: https://www.spyder-ide.org/
 [link.prompt]: https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf
