@@ -2,7 +2,7 @@ About
 ======
 <!-- TOC -->
 
-- [Preview:](#preview)
+- [Preview](#preview)
     - [User input](#user-input)
     - [Four operational quadrants](#four-operational-quadrants)
 - [Running the code](#running-the-code)
