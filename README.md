@@ -19,7 +19,7 @@ A full description of the tool and the background equations can be found in:
 
 It should be noted that the animated movement doesn't represent transient dynamics as the transient components are eliminated from the model for lightweight operation.
 
-## Preview:
+## Preview
 
 ### User input
 The user has access to two sliders:
